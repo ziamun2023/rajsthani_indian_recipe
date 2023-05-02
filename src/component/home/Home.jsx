@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ChefCards from '../ChefCards/ChefCards';
-import { Carousel, Col, Row } from 'react-bootstrap';
+// import { useState } from 'react';
+import ReactSimplyCarousel from 'react-simply-carousel';
+
 import Marquee from "react-fast-marquee";
 
 const Home = () => {
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     const [data,setData]=useState([])
     useEffect(()=>{
@@ -14,19 +17,109 @@ const Home = () => {
     },[])
     return (
         <div className='mt-5 CarouselContainer'>
-            <Carousel >
+
+<div>
+<ReactSimplyCarousel
+        activeSlideIndex={activeSlideIndex}
+        onRequestChange={setActiveSlideIndex}
+        itemsToShow={1}
+        itemsToScroll={1 }
+        forwardBtnProps={{
+          //here you can also pass className, or any other button element attributes
+          style: {
+            alignSelf: 'center',
+            background: 'black',
+            border: 'none',
+            borderRadius: '50%',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '20px',
+            height: 30,
+            lineHeight: 1,
+            textAlign: 'center',
+            width: 30,
+          },
+          children: <span>{`>`}</span>,
+        }}
+        backwardBtnProps={{
+          //here you can also pass className, or any other button element attributes
+          style: {
+            alignSelf: 'center',
+            background: 'black',
+            border: 'none',
+            borderRadius: '50%',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '20px',
+            height: 30,
+            lineHeight: 1,
+            textAlign: 'center',
+            width: 30,
+          },
+          children: <span>{`<`}</span>,
+        }}
+        responsiveProps={[
+          {
+            itemsToShow: 1,
+            itemsToScroll: 1,
+            minWidth: 768,
+          },
+        ]}
+        speed={400}
+        easing="linear"
+      >
+        {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
+        <div style={{ width: 1000, height: 600 }}>
+       <div className='mt-20 grid md:grid-cols-2'>
+
+
+      <div> <img  className='carts' src="../../../public/cover5 .jpg" alt="" /></div>
+     <p className='text-black text-2xl font-semibold'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p>
+       </div>
+        </div>
+        <div style={{ width: 1000, height: 600 }}>
+       <div className='mt-20 grid md:grid-cols-2'>
+
+
+      <div> <img  src="../../../public/cover6.jpg" alt="" /></div>
+      <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
+       </div>
+        </div>
+        <div style={{ width: 1000, height: 600 }}>
+       <div className='mt-20 grid md:grid-cols-2'>
+
+
+      <div> <img  src="../../../public/cover4.jpg" alt="" /></div>
+      <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
+       </div>
+        </div>
+
+
+      
+      </ReactSimplyCarousel>
+    </div>
+<div className='grid lg:grid-cols-3 gap-4'>
+{
+                data.map((chef)=><ChefCards key={chef.id} chef={chef}></ChefCards>)
+            }
+
+</div>
+
+            {/* <Carousel >
+              <div> <h1 className='text-black carouselText mt-5 text-start'>Authentic Indian Flavors Straight from the Kitchen of a Master Chef!   </h1></div>
+      <div> <img className='photos' src='../../../public/cover6.jpg' alt="" /></div>
       <Carousel.Item  >
        <Row>  
       <Col lg={6}>
         <img className='photos' src='../../../public/cover6.jpg' alt="" /></Col >
-     <Col lg={6} >   <h1 className='text-black carouselText mt-5 text-start'>Authentic Indian Flavors Straight from the Kitchen of a Master Chef!   </h1> <button className='btn btn-secondary'>Learn More</button></Col>
+     <Col lg={6} >  </Col>
      </Row>
       </Carousel.Item>
       <Carousel.Item  >
        <Row>  
       <Col lg={6}>
-        <img className='photos' src='../../../public/cover5 .jpg' alt="" /></Col >
-     <Col lg={6} >   <h1 className='text-black carouselText mt-5 text-start'>Discover the Flavors of India with Our Master Chef</h1> <button className='btn btn-secondary'>Learn More</button></Col>
+        </Col >
+     <Col lg={6} >  </Col>
        </Row>
       </Carousel.Item>
       <Carousel.Item  >
@@ -82,20 +175,16 @@ const Home = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item> */}
-    </Carousel>
-      
-   
+    {/* </Carousel> */}
+       {/* */}    
 
   
-    {
-                data.map((chef)=><ChefCards key={chef.id} chef={chef}></ChefCards>)
-            }
-
+ 
         
 
         
-  <div className='containers mt-5'>
-  <h2 className='text-center'>Bringing Families Together</h2>
+  <div className='containers'>
+  <h2 className='text-center text-5xl text-black mb-11'>Bringing Families Together</h2>
   <h1 className='text-center  banner-text '><p className='text-start'> Experience the Joy of Sharing <br /> Delicious Indian Food!</p></h1>
   <img className='bg-img' id='bg-img2'  alt=""  />
   

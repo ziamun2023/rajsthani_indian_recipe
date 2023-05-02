@@ -5,15 +5,13 @@ font-weight:900;
 font-size:110px;
 }
 
-.navbar{
-  /* background-image: url(../public/cover3.jpg); */
+/* .navbar{
+  background-image: url(../public/cover3.jpg);
   background-image: url(../public/cover3.jpg);
   background-repeat: repeat-y;
-  /* background-size: 500px; */
+  background-size: 500px;
   animation: scroll-background 10s linear infinite;
-
-
-}
+} */
 
 @keyframes scroll-background {
   0% {
@@ -30,7 +28,7 @@ font-size:110px;
 background-size:cover;
   animation: scroll-background 15s linear infinite;
 /*   */
-background-blend-mode:color-burn;
+/* background-blend-mode:color-burn; */
 text-shadow: 20px;
 border-radius: 20px;
 
@@ -145,3 +143,7 @@ margin-top: 20px;
     max-width: 30%;
   }
 } */
+
+body{
+  background-color: white;
+}
