@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import ChefCards from '../ChefCards/ChefCards';
+// import ChefCards from '../ChefCards/ChefCards';
 // import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
+import Categorieschef from './Categorieschef';
 
-import Marquee from "react-fast-marquee";
+// import Marquee from "react-fast-marquee";
 
 const Home = () => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
-    const [data,setData]=useState([])
-    useEffect(()=>{
-        fetch('https://chef-data-server.vercel.app/chef')
-        .then(res=>res.json())
-        .then(data=>setData(data))
-        .catch(error=>console.log(error))
-    },[])
+   
     return (
         <div className='mt-5 CarouselContainer'>
 
@@ -98,12 +93,9 @@ const Home = () => {
       
       </ReactSimplyCarousel>
     </div>
-<div className='grid lg:grid-cols-3 gap-4'>
-{
-                data.map((chef)=><ChefCards key={chef.id} chef={chef}></ChefCards>)
-            }
 
-</div>
+    <Categorieschef></Categorieschef>
+
 
             {/* <Carousel >
               <div> <h1 className='text-black carouselText mt-5 text-start'>Authentic Indian Flavors Straight from the Kitchen of a Master Chef!   </h1></div>

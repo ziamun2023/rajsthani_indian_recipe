@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Rightnav = () => {
+const Leftnav = () => {
     return (
         <div>
-            right nav
+            left nav
         </div>
     );
 };
 
-export default Rightnav;
+export default Leftnav;
