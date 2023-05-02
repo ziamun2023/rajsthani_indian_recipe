@@ -1,0 +1,57 @@
+.font-rajsthan{
+  font-family: 'EB Garamond', serif;
+font-family: 'Explora', cursive;
+font-weight:900;
+font-size:110px;
+}
+
+.navbar{
+  /* background-image: url(../public/cover3.jpg);
+  background-image: url(../public/cover3.jpg);
+  background-repeat: repeat-y;
+  background-size: 500px;
+  animation: scroll-background 10s linear infinite; */
+
+
+}
+
+@keyframes scroll-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100vh;
+  }
+}
+
+.photo{
+  background-image: url(../public/cover3.jpg);
+  background-repeat: repeat-y;
+background-size:cover;
+  animation: scroll-background 15s linear infinite;
+width: 700px;
+background-blend-mode:color-burn;
+text-shadow: 20px;
+border-radius: 20px;
+
+}
+
+
+.list{
+  font-size: large;
+  color: black;
+  font-size: x-large;
+  text-decoration: none;
+  font-style: none;
+  font-weight: 500;
+  margin-right: 10px;
+  background-color: rgb(233, 237, 237);
+  border-radius: 10px;
+  padding: 4px;
+  font-family: sans-serif;
+
+
+}
+.color{
+  color: red;
+}
