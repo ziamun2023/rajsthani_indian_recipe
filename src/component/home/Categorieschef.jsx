@@ -20,7 +20,7 @@ const Categorieschef = () => {
 
         <div className="grid lg:grid-cols-3">
         {
-    data.map(item=><Cards key={item} item={item} ></Cards>)
+    data.map(item=><Cards key={item.id} item={item} ></Cards>)
 }
      
       </div></div>

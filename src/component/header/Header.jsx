@@ -1,8 +1,21 @@
 // import React, { useState } from 'react';
 
+import { useContext } from 'react';
 import {  NavLink } from 'react-router-dom';
+import { AuthContext } from '../../provider/Authprovider';
 
 const Header = () => {
+  const {user,logout}=useContext(AuthContext)
+  console.log(user)
+  
+
+  const handlelogout=()=>{
+      logout()
+      .then(result=>{})
+      .catch(error=>{
+          console.log(error.message)
+      })
+  }
 
     // const [activelink,setActivelink]=useState(false)
 
@@ -17,16 +30,27 @@ const Header = () => {
     <a className="btn btn-ghost normal-case text-xl text-black">Rajsthani </a>
     <ul className='mx-auto flex'>
     <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
-                  <NavLink to='/blog' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Home</NavLink>
+                  <NavLink to='/home' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Home</NavLink>
               </li>
               <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
-                  <NavLink to='/home' className={({isActive})=> isActive? 'text-blue-600': 'default' }> About</NavLink>
+                  <NavLink to='/about' className={({isActive})=> isActive? 'text-blue-600': 'default' }> About</NavLink>
               </li>
               <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
-                  <NavLink to='/' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Blog</NavLink>
+                  <NavLink to='/blog' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Blog</NavLink>
               </li>
+              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
+                  <NavLink to='/login' className={({isActive})=> isActive? 'text-blue-600': 'default' }> login</NavLink>
+                  {user &&<span>welcome- <span className='bg-gra bg-yellow-500 text-sm rounded-md'>{user.email} </span><button onClick={handlelogout}> log out</button></span>}
+              </li>
+              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
+                  <NavLink to='/register' className={({isActive})=> isActive? 'text-blue-600': 'default' }> register</NavLink>
+              </li>
+
+              register
+
   </ul>
   </div>
+
  
   <div className="flex-none">
     <div className="dropdown dropdown-end">
@@ -42,14 +66,16 @@ const Header = () => {
           <span className="text-info">Subtotal: $999</span>
           <div className="card-actions">
             <button className="btn btn-primary btn-block">View cart</button>
+          
           </div>
+        
         </div>
       </div>
     </div>
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-          <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          <img src="" />
         </div>
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
