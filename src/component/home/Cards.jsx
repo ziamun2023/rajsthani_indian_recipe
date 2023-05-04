@@ -26,14 +26,15 @@ const handleLike=()=>{
 }
 
 
-    const {chef_name,picture_url,id,years_of_experience}=item
+    const {chef_name,picture_url,id,years_of_experience,num_recipes}=item
     return (
-        <div >
+        <div className='my-5 h-full' >
         <div className="card card-compact w-96 bg-base-100 shadow-xl">
-  <figure><img src={picture_url} alt="Shoes" /></figure>
+  <figure><img className='h-96' src={picture_url} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">{chef_name}</h2>
     <p>years of experience{years_of_experience}</p>
+    <p>Number of recipe {num_recipes}</p>
 
     <div className="card-actions justify-end flex">
 

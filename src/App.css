@@ -147,3 +147,8 @@ margin-top: 20px;
 body{
   background-color: white;
 }
+.marquee{
+  height: 300px;
+  width: 400px;
+  padding: 0 10px 0 10px;
+}

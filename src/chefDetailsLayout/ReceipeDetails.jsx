@@ -34,7 +34,21 @@ console.log(dishesTopreview)
     return (
         <div className='mx-14 mt-5'>
           
-            <h1 className='text-3xl'><img src={names[0].pictures_url} alt="" /></h1>
+       <div className='grid lg:grid-cols-3 my-32 bg-amber-600 rounded-md'>   
+       <div className='rounded-md' >  <img className='p-5 rounded-md' src={names[0].pictures_url} alt="" />
+       </div>
+       <div className='my-auto ms-2'>
+        <p className='text-black text-3xl font-semibold mb-2'>Chef Name:{names[0].chef_name}</p>
+        <p  className='text-black text-3xl font-semibold mb-2'> Years of Experience :{names[0].years_of_experience}</p>
+        <p  className='text-black text-3xl font-semibold mb-2'>Number of recipe:{names[0].num_recipes}</p>
+        
+
+       </div>
+       <div className='my-auto'>
+        <p className='text-4xl text-black font-bold'>About Chef</p>
+       <p  className='text-black text-3xl font-semibold p-2 '>{names[0].about}</p>
+       </div>
+       </div>
 
 <div className='container grid lg:grid-cols-3 gap-8'>
 

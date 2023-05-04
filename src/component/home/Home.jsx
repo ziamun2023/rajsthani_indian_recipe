@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 // import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
 import Categorieschef from './Categorieschef';
+import RecentNewsAndSHows from '../recentNews/RecentNewsAndSHows';
+import PeoplesReview from '../FeedBackFood/PeoplesReview';
+// import PeoplesReview from '../FeedBackFood/PeoplesReview';
 
 // import Marquee from "react-fast-marquee";
 
@@ -201,6 +204,9 @@ const Home = () => {
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Mauris euismod, lectus vel rutrum dignissim, velit velit congue nulla, sit amet fringilla tellus dolor in ipsum.</p>
   </div>
 </div> */}
+<RecentNewsAndSHows></RecentNewsAndSHows>
+
+<PeoplesReview></PeoplesReview>
 
         </div>
     );
