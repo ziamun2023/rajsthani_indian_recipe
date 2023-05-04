@@ -54,7 +54,7 @@ const Header = () => {
   {
           user &&      <div className="tooltip" data-tip={user.displayName===null? "no name found": user.displayName}>
             
-<div className='flex'><p>profile</p>      <img  className='rounded-full w-12 ' src={user.photoURL} alt="" /> </div>
+<div className='flex'><p className='text-white bg-black rounded-md my-3 p-1 mz-2'>profile </p>      <img  className='rounded-full w-12 ' src={user.photoURL} alt="" /> </div>
      </div>
          }
 

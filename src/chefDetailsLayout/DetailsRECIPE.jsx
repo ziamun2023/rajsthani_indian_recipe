@@ -17,7 +17,7 @@ const DetailsRECIPE = ({item}) => {
     // console.log(individualID)
     const [data,setData]=useState([])
     useEffect(()=>{
-        fetch(' https://chef-data-server.vercel.app/ReceipeDetails')
+        fetch('https://chef-data-server.vercel.app/ReceipeDetails')
         .then(res=>res.json())
         .then(data=>setData(data))
         .catch(error=>console.log(error))
@@ -48,7 +48,7 @@ const DetailsRECIPE = ({item}) => {
     <h2 className="card-title">{name}</h2>
     <p className='font-semibold text-gray-600'>About the recipe</p> <span><p> {details}</p></span>
     <small><p className='font-semibold text-gray-600'>Ingredients</p>{ingredients}</small>
-    <div >    <FcLike  onClick={()=>handleLike(name)}/>     </div>
+    <div > <b>Hit like button if you love </b>   <FcLike  onClick={()=>handleLike(name)}/>     </div>
     {/* <button onClick={}> love it</button> */}
     <div className="card-actions justify-end">
      

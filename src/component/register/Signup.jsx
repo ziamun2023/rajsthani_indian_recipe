@@ -10,7 +10,8 @@ const Signup = () => {
 
    
     const  [error,setError]=useState('')
-    // const [error, setError] = useState(false);
+    const [eerror, setEerror] = useState("");
+    
 
     const location=useLocation()
     const from=location.state?.from?.pathname || '/';
@@ -45,6 +46,9 @@ const Signup = () => {
             setError('password minimum greater then 6 character')
             return
         }
+        
+        
+    
     
         createuser(email,password)
         .then(result=>{
@@ -56,7 +60,7 @@ const Signup = () => {
 
         })
         .catch(error=>{
-            console.log(error)
+            setError(error.message)
         })
     }
     const handlesignupwithgithub=()=>{
@@ -84,6 +88,14 @@ const Signup = () => {
             console.log(error)
         })
      }
+     const emailsignchange=(e)=>{
+const signupemailchange=e.target.value
+if(signupemailchange.length===0){
+    setEerror("please enter email")
+}else{
+    setEerror("email received")
+}
+     }
 
     //  const handleEmailChange=(e)=>{
     //     setEmail2(e.target.value);
@@ -96,11 +108,11 @@ const Signup = () => {
         <form onSubmit={handlesignup} action="">
             <div className="form-control">
                 <label htmlFor="email">email</label>
-                <input type="email" name='email'  id=''  required />
+                <input type="email" name='email'  id=''  required  onChange={emailsignchange}/>
             </div>
             <div className="form-control">
                 <label htmlFor="password">password</label>
-                <input type="password" name='password' id='' required />
+                <input type="password" name='password' id='' required  />
             </div>
             <div className="form-control">
                 <label htmlFor="confirm">confirm password</label>
@@ -112,6 +124,8 @@ const Signup = () => {
    
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
       <p className='text-red-800 text-3xl'> {error}</p>
+      <p className='text-green-500 text-3xl'> {eerror}</p>
+      
         <div className='text-center'>
     <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
     </div>  
