@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('envirosnmetn',import.meta.env.VITE_PASS)
 const firebaseConfig = {
-  apiKey: "AIzaSyAL1Uj9kwywFYc-Fju0AWtTLuhxAH20pjA",
-  authDomain: "rajsthani-delights-web.firebaseapp.com",
-  projectId: "rajsthani-delights-web",
-  storageBucket: "rajsthani-delights-web.appspot.com",
-  messagingSenderId: "786073872080",
-  appId: "1:786073872080:web:cc28935e359cf53c9ce0d5"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTEDID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env. VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
