@@ -2,6 +2,7 @@
 import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import DetailsRECIPE from './DetailsRECIPE';
 import LoadingSpinner from '../Spinner/LoadingSpinner';
+import LazyLoad from 'react-lazy-load';
 // import { useEffect, useState } from 'react';
 // import LoadingSpinner from '../Spinner/LoadingSpinner';
 // import { useEffect, useState } from 'react';
@@ -40,9 +41,11 @@ console.log(dishesTopreview)
 
     return (
         <div className='mx-14 mt-5'>
-          
-       <div className='grid lg:grid-cols-3 my-32 bg-amber-600 rounded-md'>   
-       <div className='rounded-md' >  <img className='p-5 rounded-md' src={names[0].pictures_url} alt="" />
+               <LazyLoad height={562}>
+               <div className='grid lg:grid-cols-3 my-32 bg-amber-600 rounded-md'>   
+       <div className='rounded-md' >
+       <img className='p-5 rounded-md' src={names[0].pictures_url} alt="" />
+  
        </div>
        <div className='my-auto ms-2'>
         <p className='text-black text-3xl font-semibold mb-2'>Chef Name:{names[0].chef_name}</p>
@@ -56,6 +59,8 @@ console.log(dishesTopreview)
        <p  className='text-black text-3xl font-semibold p-2 '>{names[0].about}</p>
        </div>
        </div>
+     </LazyLoad>  
+
 
 <div className='container grid lg:grid-cols-3 gap-8'>
 

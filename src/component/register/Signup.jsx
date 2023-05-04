@@ -9,7 +9,8 @@ const auth = getAuth(app);
 const Signup = () => {
 
    
-
+   
+    // const [error, setError] = useState(false);
 
     const location=useLocation()
     const from=location.state?.from?.pathname || '/';
@@ -34,10 +35,14 @@ const Signup = () => {
             setError('password didnt match')
             return
         }
+        else if (email===''){
+            setError('Empty Email ! please enter your email id')
+        }
         else if(password.length<6){
             setError('password minimum greater then 6 character')
             return
         }
+    
         createuser(email,password)
         .then(result=>{
             const loggesuser=result.user
@@ -76,6 +81,11 @@ const Signup = () => {
             console.log(error)
         })
      }
+
+    //  const handleEmailChange=(e)=>{
+    //     setEmail2(e.target.value);
+    //     console.log(e.target.value)
+    //  }
     return (
      <div>
            <div className='form-container w-96 mx-auto'>
@@ -83,7 +93,7 @@ const Signup = () => {
         <form onSubmit={handlesignup} action="">
             <div className="form-control">
                 <label htmlFor="email">email</label>
-                <input type="email" name='email' id='' required />
+                <input type="email" name='email'  id=''  required />
             </div>
             <div className="form-control">
                 <label htmlFor="password">password</label>
@@ -98,7 +108,7 @@ const Signup = () => {
        
    
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
-        <p style={{color:"red"}}>{error}</p>
+      <p>{error}</p>
         <div className='text-center'>
     <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
     </div>  

@@ -152,3 +152,12 @@ body{
   width: 400px;
   padding: 0 10px 0 10px;
 }
+
+.LazyLoad {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
+}

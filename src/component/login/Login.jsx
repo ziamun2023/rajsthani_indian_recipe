@@ -36,6 +36,11 @@ const Login = () => {
             setError('password minimum greater then 6 character')
             return
         }
+        else if(email===""){
+            setError("please enter email address")
+            return
+        }
+       
         signin(email,password)
         .then(result=>{
         
@@ -45,7 +50,8 @@ const Login = () => {
             navigate(from,{replace: true} || Home)
         })
         .catch(error=>{
-            setError(error.message)
+            setError('You have given wrong password')
+            
         })
     }
 
@@ -65,6 +71,7 @@ const Login = () => {
                 </div>
                 <input className='btn-submit bg-orange-400 hover:bg-orange-600' type="submit" value="login" />
             </form>
+            <p className='text-red-500'>{error}</p>
            
         </div>
         <p className='text-center text-2xl my-5'>New to <b>Rajsthani Delights </b> ? <Link  to='/register'><p className='text-blue-800'>create a new account </p></Link> </p>
