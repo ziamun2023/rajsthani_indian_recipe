@@ -5,13 +5,7 @@ font-weight:900;
 font-size:110px;
 }
 
-/* .navbar{
-  background-image: url(../public/cover3.jpg);
-  background-image: url(../public/cover3.jpg);
-  background-repeat: repeat-y;
-  background-size: 500px;
-  animation: scroll-background 10s linear infinite;
-} */
+
 
 @keyframes scroll-background {
   0% {
@@ -69,7 +63,7 @@ border-radius: 20px;
   width: 100%;
 
   height: 70vh;
-  background-image: url(../public/cover9.jpg);
+  background-image: url(/cover9.jpg);
 
   background-position: center;
   background-attachment: fixed;

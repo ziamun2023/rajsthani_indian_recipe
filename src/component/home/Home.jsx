@@ -75,7 +75,7 @@ const Home = () => {
        <div className='mt-20 grid md:grid-cols-2'>
 
 
-      <div> <img  className='carts' src="../../../public/cover5 .jpg" alt="" /></div>
+      <div> <img  className='carts' src="/cover5 .jpg" alt="" /></div>
      <p className='text-black text-2xl font-semibold'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p>
        </div>
         </div>
@@ -83,7 +83,7 @@ const Home = () => {
        <div className='mt-20 grid md:grid-cols-2'>
 
 
-      <div> <img  src="../../../public/cover6.jpg" alt="" /></div>
+      <div> <img  src="/cover6.jpg" alt="" /></div>
       <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
        </div>
         </div>
@@ -91,7 +91,7 @@ const Home = () => {
        <div className='mt-20 grid md:grid-cols-2'>
 
 
-      <div> <img  src="../../../public/cover4.jpg" alt="" /></div>
+      <div> <img  src="/cover4.jpg" alt="" /></div>
       <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
        </div>
         </div>

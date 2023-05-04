@@ -111,7 +111,7 @@ const Signup = () => {
        
    
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
-      <p className='text-red-800'>show error {error}</p>
+      <p className='text-red-800 text-3xl'> {error}</p>
         <div className='text-center'>
     <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
     </div>  

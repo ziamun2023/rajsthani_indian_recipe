@@ -45,7 +45,7 @@ const Header = () => {
               </li>
               <li className='text-black text-1xl font-semibold rounded-mdduration-200  rounded-md'>
                 
-                {user ?<span><button className='bg-red-300 rounded-md p-1  my-3 mx-2  hover:bg-orange-500' onClick={handlelogout}> log out</button></span>   :<NavLink to='/login' className={({isActive})=> isActive? 'text-blue-600': 'default' }> login</NavLink> }
+                {user ?<span><button className='bg-red-300 rounded-md p-1  my-3 mx-2  hover:bg-orange-500' onClick={handlelogout}> log out</button></span>   :<NavLink to='/login' className={({isActive})=> isActive? 'text-blue-600': 'default' }> <p className='bg-blue-200 my-3 mx-2 rounded-md p-1'>login</p></NavLink> }
             </li>
 
          
