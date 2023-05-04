@@ -1,10 +1,22 @@
 import React, { useContext } from 'react';
 // import './signup.css'
-import {Link} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useState } from 'react';
 import { AuthContext } from '../../provider/Authprovider';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+const auth = getAuth(app);
 const Signup = () => {
- 
+
+   
+
+
+    const location=useLocation()
+    const from=location.state?.from?.pathname || '/';
+    const navigate=useNavigate()
+    const githubProvider=new GithubAuthProvider()
+    const googleProvider= new GoogleAuthProvider()
+    const [user,setUser]=useState(null)
     const {createuser}=useContext(AuthContext)
     // createuser receives an object as it was sent in object form(destructuring)} 
     const  [error,setError]=useState('')
@@ -29,11 +41,41 @@ const Signup = () => {
         createuser(email,password)
         .then(result=>{
             const loggesuser=result.user
+      
+            navigate(from,{replace: true} )
+    
+            
+
         })
         .catch(error=>{
             setError(error.message)
         })
     }
+    const handlesignupwithgithub=()=>{
+        signInWithPopup(auth,githubProvider)
+        .then(result=>{
+            const loggeduserGithub=result.user
+            console.log(loggeduserGithub)
+            setUser(loggeduserGithub)
+            navigate(from,{replace: true} )
+
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
+     const handleGoogleSignup=()=>{
+        signInWithPopup(auth,googleProvider)
+        .then(result=>{
+            const loggedwithgoogle=result.user
+            console.log(loggedwithgoogle)
+            setUser(loggedwithgoogle)
+            navigate(from,{replace: true} )
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+     }
     return (
      <div>
            <div className='form-container w-96 mx-auto'>
@@ -53,10 +95,20 @@ const Signup = () => {
             </div>
             <input className='btn-submit bg-orange-400 hover:bg-orange-600' type="submit" value="sign up" />
         </form>
+       
+   
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
         <p style={{color:"red"}}>{error}</p>
-       
+        <div className='text-center'>
+    <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
+    </div>  
+    <div className='text-center'>
+    <button onClick={handlesignupwithgithub}  className='btn-submit bg-gray-600 hover:bg-gray-700'>Sign up with github</button>
     </div>
+      
+    </div> 
+
+
      </div>
     );
 };

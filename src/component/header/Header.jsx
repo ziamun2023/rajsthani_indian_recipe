@@ -16,7 +16,6 @@ const Header = () => {
           console.log(error.message)
       })
   }
-
     // const [activelink,setActivelink]=useState(false)
 
     return (
@@ -25,35 +24,44 @@ const Header = () => {
 
       <div>
          <h1 className='text-center font-rajsthan'>Rajsthani Delights</h1>
-         <div className="navbar bg-base-100  w-4/5 mx-auto  photo">
-  <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl text-black">Rajsthani </a>
-    <ul className='mx-auto flex'>
-    <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
+         <div className="navbar bg-base-100  w-5/5 mx-auto   photo">
+  <div className="flex">
+  <a className="btn btn-ghost normal-case text-xl text-black">Rajsthani </a>
+  <div className='flex '>
+
+<div>  <ul className='flex'>
+    <li className='text-black text-1xl font-semibold hover:bg-gray-200 rounded-md p-1 my-3 mx-2 duration-200 bg-white'>
                   <NavLink to='/home' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Home</NavLink>
               </li>
-              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
-                  <NavLink to='/about' className={({isActive})=> isActive? 'text-blue-600': 'default' }> About</NavLink>
-              </li>
-              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
+            
+              <li className='text-black text-1xl font-semibold hover:bg-gray-200 rounded-md p-1  my-3 mx-2 duration-200  bg-white'>
                   <NavLink to='/blog' className={({isActive})=> isActive? 'text-blue-600': 'default' }> Blog</NavLink>
               </li>
-              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
-                  <NavLink to='/login' className={({isActive})=> isActive? 'text-blue-600': 'default' }> login</NavLink>
-                  {user &&<span>welcome- <span className='bg-gra bg-yellow-500 text-sm rounded-md'>{user.email} </span><button onClick={handlelogout}> log out</button></span>}
-              </li>
-              <li className='text-black text-2xl font-semibold hover:bg-gray-200 rounded-md p-3 duration-200'>
+          
+              <li className='text-black text-1xl font-semibold hover:bg-gray-200 rounded-md p-1  my-3 mx-2 duration-200  bg-white'>
                   <NavLink to='/register' className={({isActive})=> isActive? 'text-blue-600': 'default' }> register</NavLink>
               </li>
+              <li className='text-black text-1xl font-semibold rounded-mdduration-200  rounded-md'>
+                
+                {user ?<span><button className='bg-red-300 rounded-md p-1  my-3 mx-2  hover:bg-orange-500' onClick={handlelogout}> log out</button></span>   :<NavLink to='/login' className={({isActive})=> isActive? 'text-blue-600': 'default' }> login</NavLink> }
+            </li>
 
-              register
+         
 
-  </ul>
+  </ul></div>
+  {
+          user &&      <div className="tooltip" data-tip={user.displayName===null? "no name found": user.displayName}>
+            
+<div className='flex'><p>profile</p>      <img  className='rounded-full w-12 ' src={user.photoURL} alt="" /> </div>
+     </div>
+         }
+
   </div>
-
+  </div>
+  {/* welcome- <span className='bg-gra bg-yellow-500 text-sm rounded-md'>{user.email} </span> */}
  
-  <div className="flex-none">
-    <div className="dropdown dropdown-end">
+  {/* <div className="flex-none"> */}
+    {/* <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle">
         <div className="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -71,8 +79,8 @@ const Header = () => {
         
         </div>
       </div>
-    </div>
-    <div className="dropdown dropdown-end">
+    </div> */}
+    {/* <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
           <img src="" />
@@ -88,10 +96,10 @@ const Header = () => {
         <li><a>Settings</a></li>
         <li><a>Logout</a></li>
       </ul>
-    </div>
+    </div> */}
   </div>
 </div>
-      </div>
+      // </div>
      
     //     <div>
 

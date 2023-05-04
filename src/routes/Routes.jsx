@@ -14,12 +14,16 @@ import Login from "../component/login/Login";
 // import Register from "../component/register/Register";
 import Signup from "../component/register/Signup";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import LoadingSpinner from "../Spinner/LoadingSpinner";
+// import ErrorPage from "../component/errorpage/ErrorPage ";
+import ErrorHandle from "../component/errorpage/ErrorHandle";
 
 
 
 const router = createBrowserRouter([
   {path:'/',
 element:<Main></Main>,
+errorElement:<ErrorHandle/>, 
 children:[
   {path:'/',
 element:<Home></Home>
@@ -33,8 +37,21 @@ element:<About></About>},
 element:<Blog></Blog>},
 {path:'/login',
 element:<Login></Login>},
+{
+  path:'/*',
+  element:<ErrorHandle/>
+
+},
 {path:'/register',
 element:<Signup></Signup>},
+// {
+//   path:'/*',
+//   element:<ErrorPage/>
+// },
+{
+  path:'/loader',
+  element:<LoadingSpinner/>
+},
 
 {path:'/details',
 element:<DetailsRECIPE></DetailsRECIPE>},

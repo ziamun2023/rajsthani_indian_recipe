@@ -4,9 +4,18 @@ import './login.css'
 import { useState } from 'react';
 import { AuthContext } from '../../provider/Authprovider';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import Home from '../home/Home';
+import { Link } from 'react-router-dom';
+// import LoadingSpinner from '../../Spinner/LoadingSpinner';
 const Login = () => {
+    const loginwithgoogle=()=>{
+
+    }
+
+  
     const {signin}=useContext(AuthContext)
     const navigate=useNavigate()
+  
     const location=useLocation()
     const from=location.state?.from?.pathname || '/';
    
@@ -29,19 +38,22 @@ const Login = () => {
         }
         signin(email,password)
         .then(result=>{
+        
             const loggesuser=result.user
             form.reset()
             console.log(loggesuser)
-            navigate(from,{replace: true})
+            navigate(from,{replace: true} || Home)
         })
         .catch(error=>{
             setError(error.message)
         })
     }
+
+
     return (
      <div>
            <div className='form-container w-96 mx-auto'>
-            <h2 className='form-title text-5xl text-black'>login</h2>
+            <h2 className='form-title text-5xl text-black text-center'>login</h2>
             <form onSubmit={handlelogin} action="">
                 <div className="form-control">
                     <label htmlFor="">email</label>
@@ -55,6 +67,7 @@ const Login = () => {
             </form>
            
         </div>
+        <p className='text-center text-2xl my-5'>New to <b>Rajsthani Delights </b> ? <Link  to='/register'><p className='text-blue-800'>create a new account </p></Link> </p>
      </div>
     );
 };

@@ -1,7 +1,9 @@
 // import React, { useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import DetailsRECIPE from './DetailsRECIPE';
-import { useEffect, useState } from 'react';
+import LoadingSpinner from '../Spinner/LoadingSpinner';
+// import { useEffect, useState } from 'react';
+// import LoadingSpinner from '../Spinner/LoadingSpinner';
 // import { useEffect, useState } from 'react';
 // import { p } from 'vite/dist/node/chunks/dep-a178814b';
 // import Categorieschef from '../component/home/Categorieschef';
@@ -9,6 +11,10 @@ import { useEffect, useState } from 'react';
 // import Cards from '../component/home/Cards';
 
 const ReceipeDetails = () => {
+    const navigation=useNavigation()
+    if(navigation.state==='loading'){
+       return <LoadingSpinner/>
+    }
     // const [result,setResult]=useState([])
     // console.log(result)
     // const [data,setData]=useState([])
@@ -25,6 +31,7 @@ const ReceipeDetails = () => {
 
  const {id}=useParams()
  const categorydish=useLoaderData()
+
 
 const names=categorydish.filter(item=>item.chef_name)
 console.log(names)
