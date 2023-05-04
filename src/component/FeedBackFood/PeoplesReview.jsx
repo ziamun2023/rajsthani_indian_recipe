@@ -1,11 +1,10 @@
 import React from 'react';
-// import MyComponent from "../components/MyComponent";
-// import Marquee from "react-fast-marquee";
+
 
 const PeoplesReview = () => {
     return (
 <div>
-    <p className='text-4xl font-bold text-gray-600 my-14 text-center'>What Other Cuntry say about Rajsthani food</p>
+    <p className='text-4xl font-bold text-gray-600 my-14 text-center'>What Other countries say about Rajsthani food</p>
 <div className='grid lg:grid-cols-3 gap-6 my-10'>
     <div className=' bg-gray-700 rounded-xl '>
         <p className='text-3xl text-white font-bold text-center'>Bangladesh</p>

@@ -24,20 +24,10 @@ const DetailsRECIPE = ({item}) => {
     },[])
 
      
-//  const handlelike=(id)=>{
-// console.log('idclide' ,id)
-//  }
-//   const findid=number
 
-//   console.log(findid.length)
-    const {category_id,name,details,picture_url,ingredients}=item
+    const {name,details,picture_url,ingredients}=item
     // console.log(category_id)
 
-// let array=[]
-    // const result=data.find(chef=>chef.id===findid)
- 
-//  array.push=result
-//  console.log(array)
     return (
         <div >
              <ToastContainer />

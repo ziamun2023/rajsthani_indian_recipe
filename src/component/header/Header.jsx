@@ -65,24 +65,7 @@ const Header = () => {
 </div>
       // </div>
      
-    //     <div>
 
-          
-    //       
-    //         <Navbar className='navbar photo mx-auto' >
-    //     <Container>
-        
-    //       <Nav  className="mx-auto nav">
-    //       {/* className={({isActive})=> isActive? 'text-blue-600': 'default' */}
-              
-    // <li > <Link to="/" className='list'>Home</Link></li>
-    // <li >   <Link to="/about" className='list'>about</Link></li>
-    // <li >  <Link to="/blog" className='list'>blog</Link> </li>
-    
-    //       </Nav>
-    //     </Container>
-        
-    //   </Navbar>
 
   
             

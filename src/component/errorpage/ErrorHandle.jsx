@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "lottie-react";
-import groovyWalkAnimation from "../../../public/98488-bot-error-404.json";
+import groovyWalkAnimation from "/src/98488-bot-error-404.json";
 import { Link, useRouteError } from 'react-router-dom';
 
 const ErrorHandle = () => {
