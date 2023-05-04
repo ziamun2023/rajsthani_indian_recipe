@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 import {  NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/Authprovider';
+// import ReactTopdf from '../../reactToPdf/ReactTopdf';
 
 const Header = () => {
   const {user,logout}=useContext(AuthContext)
@@ -23,6 +24,7 @@ const Header = () => {
      
 
       <div>
+  
          <h1 className='text-center font-rajsthan text-gray-300'>Rajsthani Delights</h1>
          <div className="navbar bg-base-100  w-5/5 mx-auto   photo">
   <div className="flex">

@@ -5,11 +5,15 @@ import ReactSimplyCarousel from 'react-simply-carousel';
 import Categorieschef from './Categorieschef';
 import RecentNewsAndSHows from '../recentNews/RecentNewsAndSHows';
 import PeoplesReview from '../FeedBackFood/PeoplesReview';
+// import About from '../About/About';
+import ReactTopdf from '../../reactToPdf/ReactTopdf';
 // import PeoplesReview from '../FeedBackFood/PeoplesReview';
 
 // import Marquee from "react-fast-marquee";
 
 const Home = () => {
+
+  
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
    
@@ -207,6 +211,9 @@ const Home = () => {
 <RecentNewsAndSHows></RecentNewsAndSHows>
 
 <PeoplesReview></PeoplesReview>
+
+
+<ReactTopdf/>
 
         </div>
     );

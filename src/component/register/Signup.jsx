@@ -31,13 +31,13 @@ const Signup = () => {
         const password=form.password.value
         const confirm=form.confirm.value
         console.log(email,password,confirm)
-        // setError('')
+        setError('')
         // section 2
         if (password!==confirm){
             setError('password didnt match')
             return
         }
-        else if (email===""){
+        else if(email===""){
             setError('Empty Email ! please enter your email id')
             return
         }
@@ -111,7 +111,7 @@ const Signup = () => {
        
    
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
-      <p className='text-red-800'>{error}</p>
+      <p className='text-red-800'>show error {error}</p>
         <div className='text-center'>
     <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
     </div>  

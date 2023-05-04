@@ -27,7 +27,7 @@ const Login = () => {
         const form=event.target;
         const email=form.email.value
         const password=form.password.value
-       
+    //    setError('')
         console.log(email,password)
         // setError('')
         // section 2
@@ -40,6 +40,7 @@ const Login = () => {
             setError("please enter email address")
             return
         }
+     
        
         signin(email,password)
         .then(result=>{
