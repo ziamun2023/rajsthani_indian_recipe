@@ -9,7 +9,7 @@ const auth = getAuth(app);
 const Signup = () => {
 
    
-   
+    const  [error,setError]=useState('')
     // const [error, setError] = useState(false);
 
     const location=useLocation()
@@ -20,23 +20,26 @@ const Signup = () => {
     const [user,setUser]=useState(null)
     const {createuser}=useContext(AuthContext)
     // createuser receives an object as it was sent in object form(destructuring)} 
-    const  [error,setError]=useState('')
+   
     const handlesignup=(event)=>{
+        
         // section 1
         event.preventDefault()
         const form=event.target;
         const email=form.email.value
+        console.log(email)
         const password=form.password.value
         const confirm=form.confirm.value
         console.log(email,password,confirm)
-        setError('')
+        // setError('')
         // section 2
         if (password!==confirm){
             setError('password didnt match')
             return
         }
-        else if (email===''){
+        else if (email===""){
             setError('Empty Email ! please enter your email id')
+            return
         }
         else if(password.length<6){
             setError('password minimum greater then 6 character')
@@ -53,7 +56,7 @@ const Signup = () => {
 
         })
         .catch(error=>{
-            setError(error.message)
+            console.log(error)
         })
     }
     const handlesignupwithgithub=()=>{
@@ -108,7 +111,7 @@ const Signup = () => {
        
    
         <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
-      <p>{error}</p>
+      <p className='text-red-800'>{error}</p>
         <div className='text-center'>
     <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
     </div>  
