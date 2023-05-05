@@ -60,17 +60,7 @@ element:<PrivateRoute><ReceipeDetails></ReceipeDetails></PrivateRoute>,
 loader:({params})=>fetch(`https://chef-data-server.vercel.app/ReceipeDetails/${params.id}`)}
 
 ]}
-// ,
-//  {
-//    path:'/receipe',
-//   element:<Newlayout></Newlayout>,
-// children:[
-//   {path:'id',
-// element:<ReceipeDetails></ReceipeDetails>}
- 
-//   ]
 
-//  }
 ])
 
 

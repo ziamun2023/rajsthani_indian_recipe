@@ -3,32 +3,13 @@ import { useLoaderData, useNavigation, useParams } from 'react-router-dom';
 import DetailsRECIPE from './DetailsRECIPE';
 import LoadingSpinner from '../Spinner/LoadingSpinner';
 import LazyLoad from 'react-lazy-load';
-// import { useEffect, useState } from 'react';
-// import LoadingSpinner from '../Spinner/LoadingSpinner';
-// import { useEffect, useState } from 'react';
-// import { p } from 'vite/dist/node/chunks/dep-a178814b';
-// import Categorieschef from '../component/home/Categorieschef';
-// import { Link } from 'react-router-dom';
-// import Cards from '../component/home/Cards';
 
 const ReceipeDetails = () => {
     const navigation=useNavigation()
     if(navigation.state==='loading'){
        return <LoadingSpinner/>
     }
-    // const [result,setResult]=useState([])
-    // console.log(result)
-    // const [data,setData]=useState([])
-    // useEffect(()=>{
-    //     fetch('https://chef-data-server.vercel.app/ReceipeDetails')
-    //     .then(res=>res.json())
-    //     .then(data=>setData(data))
-    //     .catch(error=>console.log(error))
-    // },[])
 
-   
-    // console.log(data)
-//  let arrayofchef=[]
 
  const {id}=useParams()
  const categorydish=useLoaderData()
@@ -40,41 +21,46 @@ const dishesTopreview=categorydish.filter(item=>!item.chef_name)
 console.log(dishesTopreview)
 
     return (
-        <div className='mx-14 mt-5'>
-               <LazyLoad height={562}>
-               <div className='grid lg:grid-cols-3 my-32 bg-amber-600 rounded-md'>   
-       <div className='rounded-md' >
-       <img className='p-5 rounded-md' src={names[0].pictures_url} alt="" />
+        <div className=' mt-5'>
+               <LazyLoad >
+               <div className='grid lg:grid-cols-6 my-28 glass drop-shadow-2xl rounded-md w-5/6 mx-auto  py-10'>   
+       <div className='rounded-md col-span-2' >
+       <img className='p-5 my-auto rounded-md chef-photo' src={names[0].pictures_url} alt="" />
   
        </div>
-       <div className='my-auto ms-2'>
-        <p className='text-black text-3xl font-semibold mb-2'>Chef Name:{names[0].chef_name}</p>
-        <p  className='text-black text-3xl font-semibold mb-2'> Years of Experience :{names[0].years_of_experience}</p>
-        <p  className='text-black text-3xl font-semibold mb-2'>Number of recipe:{names[0].num_recipes}</p>
+   
         
+<div className='col-span-4 bg-gray-300 mx-5 px-10 py-5 rounded-md'>
+<p className='text-black text-2xl font-semibold mb-2'><b>Chef Name:</b>{names[0].chef_name}</p>
+        <p  className='text-black text-2xl font-semibold mb-2'> <b>Years of Experience :</b>{names[0].years_of_experience}</p>
+        <p  className='text-black text-2xl font-semibold mb-2'><b>Number of recipe:</b>{names[0].num_recipes}</p>
+        <div className='my-auto'>
+        <p className='text-2xl text-black font-bold text-center'>About Chef</p>
+       <p  className='text-black font-semibold p-2 '>{names[0].about}</p>
+       </div>
+</div>
 
-       </div>
-       <div className='my-auto'>
-        <p className='text-4xl text-black font-bold'>About Chef</p>
-       <p  className='text-black text-3xl font-semibold p-2 '>{names[0].about}</p>
-       </div>
+    
+     
        </div>
      </LazyLoad>  
 
 
-<div className='container grid lg:grid-cols-3 gap-8'>
+
+<h1 className='text-5xl text-gray-600 text-center mb-10'>All items</h1>
+<div className='container mb-14'>
 
          
-         {
+      <div className=' grid lg:grid-cols-3 md:grid-cols-2  gap-7  '>
+      {
           dishesTopreview.map(item=><DetailsRECIPE key={item._id} item={item}  ></DetailsRECIPE>)
          }
            
+      </div>
           </div>
 
-   <p>
-   {/* {foundperson.chef_name} */}
-   </p>
-        </div>
+</div>
+        
     );
 };
 

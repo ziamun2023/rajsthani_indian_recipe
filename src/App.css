@@ -83,7 +83,7 @@ margin-top: 20px;
   position: absolute;
   color: white;
   font-weight: 600;
-  font-size: 55px;
+  font-size: 30px;
   top: 130px;
   left: 25px;
   
@@ -91,62 +91,39 @@ margin-top: 20px;
  
   
 }
-
-/* @media(max-width:500px){
-  .container{
-    padding: 10px;
-  }
-} */
-/* 
-.banner-container {
-  position: relative;
+.user{
+  height: 120px;
+  margin-top: 10px;
+}
+.banners-photo{
+  object-fit: cover;
+background-image: 100%;
 }
 
-.banner-image {
-  width: 100%;
-  height: auto;
+.banner-first {
+ background-image: url(../public//pexels-ella-olsson-1640773\ \(2\).jpg);
+  height: 400px;
+  width: 400px;
+  
 }
 
-.banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  max-width: 80%;
+
+.chef-photo{
+object-fit: cover;
+height: 300px;
+width: 400px;
 }
-
-@media screen and (min-width: 768px) {
-  .banner-text {
-    max-width: 50%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .banner-text {
-    max-width: 40%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .banner-text {
-    max-width: 30%;
-  }
-} */
-
 body{
   background-color: white;
+  margin: 0 ;
+  padding: 0;
 }
 .marquee{
   height: 300px;
   width: 400px;
   padding: 0 10px 0 10px;
 }
-
+/* lazy laoad css */
 .LazyLoad {
   opacity: 0;
   transition: all 1s ease-in-out;
@@ -155,3 +132,9 @@ body{
 .is-visible {
   opacity: 1;
 }
+
+/* shadow css */
+
+/* .shadows{
+  box-shadow: 12px 12px 2px 1px rgba(19, 18, 18, 0.2); ;
+} */

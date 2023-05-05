@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import ScrollToTop from "react-scroll-to-top";
 // import ChefCards from '../ChefCards/ChefCards';
 // import { useState } from 'react';
 import ReactSimplyCarousel from 'react-simply-carousel';
@@ -7,176 +8,63 @@ import RecentNewsAndSHows from '../recentNews/RecentNewsAndSHows';
 import PeoplesReview from '../FeedBackFood/PeoplesReview';
 // import About from '../About/About';
 import ReactTopdf from '../../reactToPdf/ReactTopdf';
-// import PeoplesReview from '../FeedBackFood/PeoplesReview';
+import AnimateGotop from '../animation/AnimateGotop';
+import { FaSistrix } from "react-icons/fa";
 
-// import Marquee from "react-fast-marquee";
+
+
 
 const Home = () => {
-
-  
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-
-   
     return (
-        <div className='mt-5 CarouselContainer'>
+        <div className='mt-5 w-full h-full '>
 
+          <div className='relative '>
+            <div className=' '>
+              
+          <img className='w-full h-96  brightness-50 object-cover rounded-xl' src="../../../public/pexels-ella-olsson-1640773 (2).jpg" alt="" />
+            </div>
+         
+<div className='absolute  top-28 left-6'>
+<h1 className='tracking-wide text-white text-3xl  text-start font-semibold text-center'> Unleash the Flavors of India <br /> Discover the Best Recipes with Just One Click </h1>
+<div className='flex'><input type="text" placeholder="Type here" className="input w-full mt-5 bg-white max-w-xs" /><button className="btn btn-active btn-ghost mt-5 ms-5"> <FaSistrix/></button></div>
+
+</div>
+
+          </div>
+        
 <div>
-<ReactSimplyCarousel
-        activeSlideIndex={activeSlideIndex}
-        onRequestChange={setActiveSlideIndex}
-        itemsToShow={1}
-        itemsToScroll={1 }
-        forwardBtnProps={{
-          //here you can also pass className, or any other button element attributes
-          style: {
-            alignSelf: 'center',
-            background: 'black',
-            border: 'none',
-            borderRadius: '50%',
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: '20px',
-            height: 30,
-            lineHeight: 1,
-            textAlign: 'center',
-            width: 30,
-          },
-          children: <span>{`>`}</span>,
-        }}
-        backwardBtnProps={{
-          //here you can also pass className, or any other button element attributes
-          style: {
-            alignSelf: 'center',
-            background: 'black',
-            border: 'none',
-            borderRadius: '50%',
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: '20px',
-            height: 30,
-            lineHeight: 1,
-            textAlign: 'center',
-            width: 30,
-          },
-          children: <span>{`<`}</span>,
-        }}
-        responsiveProps={[
-          {
-            itemsToShow: 1,
-            itemsToScroll: 1,
-            minWidth: 768,
-          },
-        ]}
-        speed={400}
-        easing="linear"
-      >
-        {/* here you can also pass any other element attributes. Also, you can use your custom components as slides */}
-        <div style={{ width: 1000, height: 600 }}>
-       <div className='mt-20 grid md:grid-cols-2'>
 
 
-      <div> <img  className='carts' src="/cover5 .jpg" alt="" /></div>
-     <p className='text-black text-2xl font-semibold'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p>
-       </div>
-        </div>
-        <div style={{ width: 1000, height: 600 }}>
-       <div className='mt-20 grid md:grid-cols-2'>
-
-
-      <div> <img  src="/cover6.jpg" alt="" /></div>
-      <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
-       </div>
-        </div>
-        <div style={{ width: 1000, height: 600 }}>
-       <div className='mt-20 grid md:grid-cols-2'>
-
-
-      <div> <img  src="/cover4.jpg" alt="" /></div>
-      <div> <p className='text-black text-5xl font-semibold mt-5'>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p></div>
-       </div>
-        </div>
-
-
-      
-      </ReactSimplyCarousel>
-    </div>
+<h1 className='text-gray-800 text-5xl text-center font-semibold my-12'>Our best Chefs</h1>
 
     <Categorieschef></Categorieschef>
+      <div className="carousel w-5/6 mx-auto my-20">
+  <div id="item1" className="carousel-item w-full grid lg:grid-cols-2">
+    <img src="/cover5 .jpg" className="w-full banners-photo" />
+    <p className='text-gray-800 tracking-wide text-full px-5 font-semibold my-auto '>Experience Authentic Indian Cuisine: Let Our Expert Chef Take You on a Culinary Journey</p>
+
+  </div> 
+  <div id="item2" className="carousel-item w-full grid lg:grid-cols-2">
+    <img  src="/cover4.jpg" className="w-full banners-photo" />
+    <p className='text-gray-800 tracking-wide text-full px-5 font-semibold my-auto '>Savor the Flavors of Rajasthan: Your Ultimate Food Destination!</p>
+
+  </div> 
+  <div id="item3" className="carousel-item w-full grid lg:grid-cols-2">
+    <img src="/cover6.jpg" className="w-full banners-photo" />
+    <p className='text-gray-800 tracking-wide text-full px-5 font-semibold my-auto '>Experience the Richness of Rajasthani Cuisine: Indulge in Authentic Delights!</p>
+
+  </div> 
+  
+</div> 
+<div className="flex justify-center w-full py-2 gap-2">
+  <a href="#item1" className="btn btn-xs">1</a> 
+  <a href="#item2" className="btn btn-xs">2</a> 
+  <a href="#item3" className="btn btn-xs">3</a> 
+</div>
 
 
-            {/* <Carousel >
-              <div> <h1 className='text-black carouselText mt-5 text-start'>Authentic Indian Flavors Straight from the Kitchen of a Master Chef!   </h1></div>
-      <div> <img className='photos' src='../../../public/cover6.jpg' alt="" /></div>
-      <Carousel.Item  >
-       <Row>  
-      <Col lg={6}>
-        <img className='photos' src='../../../public/cover6.jpg' alt="" /></Col >
-     <Col lg={6} >  </Col>
-     </Row>
-      </Carousel.Item>
-      <Carousel.Item  >
-       <Row>  
-      <Col lg={6}>
-        </Col >
-     <Col lg={6} >  </Col>
-       </Row>
-      </Carousel.Item>
-      <Carousel.Item  >
-       <Row>  
-      <Col lg={6}>
-        <img className='photos' src='../../../public/cover4.jpg' alt="" /></Col >
-     <Col lg={6} >   <h1 className='text-black carouselText mt-5 text-start'>Unleash the Magic of Indian Cooking: Join Our Chef and Learn to Cook Like a Pro!</h1> <button className='btn btn-secondary'>Learn More</button></Col>
-       </Row>
-      </Carousel.Item>
-      {/* <Carousel.Item >
-       <div  className='row'>  
-      <div  className='col'> <img
-          className="d-block w-100"
-          src='../../../public/cover1.jpg'
-          alt="First slide"
-        /></div>
-     <div  className='col'>   </div >
-       </div>
-      </Carousel.Item>
-      <Carousel.Item >
-       <div  className='row'>  
-      <div  className='col'>  <img
-          className="d-block w-100"
-          src='../../../public/cover1.jpg'
-          alt="First slide"
-        /></div>
-     <div  className='col'>   <h1 className='text-black carouselText mt-5 text-start'>Unleash the Magic of Indian Cooking: Join Our Chef and Learn to Cook Like a Pro!</h1></div>
-       </div>
-      </Carousel.Item> */}
-      {/* <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src='../../../public/cover1.jpg'
-          alt="Second slide"
-        />
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
-      {/* <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
-    {/* </Carousel> */}
-       {/* */}    
-
+     
   
  
         
@@ -189,31 +77,15 @@ const Home = () => {
   
 </div>
 
- 
-
-{/* <Marquee>
-   <p>helow</p>
-   <p>helow</p>
-   <p>helow</p>
-  
-    
-
-   
-  </Marquee> */}
-
-{/* <div className="banner-container">
-  <img src="../../../public/cover9.jpg" alt="Banner Image" className="banner-image"/>
-  <div className="banner-text">
-    <h1>Example Text</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Mauris euismod, lectus vel rutrum dignissim, velit velit congue nulla, sit amet fringilla tellus dolor in ipsum.</p>
-  </div>
-</div> */}
 <RecentNewsAndSHows></RecentNewsAndSHows>
 
 <PeoplesReview></PeoplesReview>
 
 
 <ReactTopdf/>
+
+<AnimateGotop/>
+</div>
 
         </div>
     );

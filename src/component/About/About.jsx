@@ -2,9 +2,10 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
-            <h1 className='text-5xl text-gray-700 my-6 text-center'>About us </h1>
- <p className='text-center mx-3 font-semibold'>           My website is a popular food chef website that focuses on Rajasthani cuisine.
+        <div className='bg-gray-300'>
+            
+            <h1 className='text-5xl text-gray-900 my-6 text-center'>About us </h1>
+ <p className='text-center mx-3 font-semibold text-gray-800'>           My website is a popular food chef website that focuses on Rajasthani cuisine.
 It features Indian chefs and their recipes, as well as food-related news.
 The website showcases a wide variety of Rajasthani dishes, from traditional favorites to modern twists.
 Visitors can easily navigate the website and search for their favorite recipes.

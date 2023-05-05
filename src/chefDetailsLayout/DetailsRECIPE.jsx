@@ -11,10 +11,6 @@ const DetailsRECIPE = ({item}) => {
  toast("Hope You liked it ")
     }
     
-//   const [result22,setResult]=useState([])
-
-
-    // console.log(individualID)
     const [data,setData]=useState([])
     useEffect(()=>{
         fetch('https://chef-data-server.vercel.app/ReceipeDetails')
@@ -26,32 +22,24 @@ const DetailsRECIPE = ({item}) => {
      
 
     const {name,details,picture_url,ingredients}=item
-    // console.log(category_id)
+
 
     return (
         <div >
              <ToastContainer />
-            <div className='grid lg:grid-cols-2 gap-7'>
-            <div className="card w-96 glass">
-  <figure><img src={picture_url}alt="car!"/></figure>
+            <div className=' '>
+            <div className="card glass">
+  <figure><img className='h-52 my-10 ' src={picture_url}alt="car!"/></figure>
   <div className="card-body">
-    <h2 className="card-title">{name}</h2>
-    <p className='font-semibold text-gray-600'>About the recipe</p> <span><p> {details}</p></span>
-    <small><p className='font-semibold text-gray-600'>Ingredients</p>{ingredients}</small>
+    <h2 className="card-title font-semibold text-2xl text-gray-900">{name}</h2>
+    <p className='font-semibold text-gray-800'>About the recipe</p> <span><p className='text-gray-600 mb-5'> {details}</p></span>
+   <div className='bg-gray-600 p-5 rounded-md'> <small><p className='font-semibold text-gray-200'>Ingredients</p>{ingredients}</small></div>
     <div > <b>Hit like button if you love </b>   <FcLike  onClick={()=>handleLike(name)}/>     </div>
-    {/* <button onClick={}> love it</button> */}
-    <div className="card-actions justify-end">
-     
-    </div>
+
+    
   </div>
 </div>
             </div>
-<div >
-
-{/* <img src={result.picture_url} alt="" /> */}
-   {/* <img src={result.picture_url?.picture_url} alt="" /> */}
-
-</div>
         </div>
     );
 };

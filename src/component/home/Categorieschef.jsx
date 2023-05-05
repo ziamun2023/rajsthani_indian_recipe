@@ -17,7 +17,7 @@ const Categorieschef = () => {
         <div >
 
             
-{/* {`/Receipedetails/${item.id}`} */}
+
 
         <div className="grid lg:grid-cols-3">
         {

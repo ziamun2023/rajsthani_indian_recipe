@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "/src/70640-floating-magic-link-login.json";
 // import './signup.css'
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useState } from 'react';
@@ -97,14 +99,14 @@ if(signupemailchange.length===0){
 }
      }
 
-    //  const handleEmailChange=(e)=>{
-    //     setEmail2(e.target.value);
-    //     console.log(e.target.value)
-    //  }
+
     return (
-     <div>
-           <div className='form-container w-96 mx-auto'>
-        <h2 className='form-title'>signup</h2>
+   <div>
+  
+      <div className='grid lg:grid-cols-2'>
+         <div className='my-auto mx-auto'>
+         <div className='form-container   h-full my-auto '>
+        <h2 className='form-title text-center text-6xl font-bold my-10 text-gray-600'>signup</h2>
         <form onSubmit={handlesignup} action="">
             <div className="form-control">
                 <label htmlFor="email">email</label>
@@ -118,25 +120,30 @@ if(signupemailchange.length===0){
                 <label htmlFor="confirm">confirm password</label>
                 <input type="password" name='confirm' id='' required />
             </div>
-            <input className='btn-submit bg-orange-400 hover:bg-orange-600' type="submit" value="sign up" />
+            <input className='btn-submit  bg-orange-400 hover:bg-orange-600' type="submit" value="sign up" />
         </form>
        
    
-        <p><small>already have an account? <Link to='/login'> log in</Link>link</small></p>
+        <p className='text-center font-base text-black mt-5'><small>already have an account? <Link to='/login'><b>log in</b></Link></small></p>
       <p className='text-red-800 text-3xl'> {error}</p>
       <p className='text-green-500 text-3xl'> {eerror}</p>
       
-        <div className='text-center'>
-    <button onClick={handleGoogleSignup} className='btn-submit bg-blue-600 hover:bg-blue-900'>Sign up with google</button>
+        <div className='mb-5'>
+    <button onClick={handleGoogleSignup} className=' bg-blue-500 hover:bg-blue-900 ms-5  rounded-md px-3 py-2  text-black font-semibold '>Sign up with google</button><button onClick={handlesignupwithgithub}  className=' bg-gray-600 hover:bg-gray-700  rounded-md px-3 py-2 ms-4 '>Sign up with github</button>
+    
     </div>  
-    <div className='text-center'>
-    <button onClick={handlesignupwithgithub}  className='btn-submit bg-gray-600 hover:bg-gray-700'>Sign up with github</button>
-    </div>
+    
+   
       
     </div> 
 
 
+         </div>
+         <div className=' w-full h-full my-auto'>
+         <Lottie style={{width:400}} className='mx-auto my-auto ' animationData={groovyWalkAnimation} loop={true} /> 
+         </div>
      </div>
+   </div>
     );
 };
 

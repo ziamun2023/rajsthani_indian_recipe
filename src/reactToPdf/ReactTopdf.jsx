@@ -18,7 +18,8 @@ const pdf=useReactToPrint(
         <div ref={componentref}>
          <About/>
           
-           <div className='mx-auto w-96 ps-24 mt-10'>
+           <div className=' w-full mx-auto mt-10'>
+
            <button className='btn text-center ' onClick={pdf}>download pdf or print</button>
 
            </div>

@@ -1,19 +1,27 @@
 import React from 'react';
 import Header from '../component/header/Header';
 import Footer from '../component/footer/Footer';
-import { Outlet, useNavigation } from 'react-router-dom';
-// import LoadingSpinner from '../Spinner/LoadingSpinner';
-// import { ColorRing } from  'react-loader-spinner'
+import { Outlet } from 'react-router-dom';
+
 
 const Main = () => {
 
-    const navigation=useNavigation()
+
     return (
         <>
-            <Header></Header>
-       <Outlet></Outlet>
-            <Footer></Footer>
 
+
+    <div className=' mx-5'>
+    <Header></Header>
+    </div>
+        
+  <div className='z-30 mx-10' >
+  <Outlet></Outlet>
+  </div>
+            <Footer></Footer>
+          
+
+  
         </>
     );
 };

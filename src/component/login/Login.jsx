@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import './login.css'
-
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "/src/93385-login.json";
 import { useState } from 'react';
 import { AuthContext } from '../../provider/Authprovider';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -15,7 +16,7 @@ const [succesemail,setsuccesemail]=useState('')
     // const [pass,setPass]=useState(false)
 const [succes,setSucce]=useState('')
   
-    const {signin}=useContext(AuthContext)
+    const {signin,user}=useContext(AuthContext)
     const navigate=useNavigate()
   
     const location=useLocation()
@@ -49,7 +50,7 @@ const [succes,setSucce]=useState('')
         })
         .catch(error=>{
             setError("Password didnt match the email")
-            console.log()
+            
             
         })
     }
@@ -81,27 +82,34 @@ else{
 
 
     return (
-     <div>
-           <div className='form-container w-96 mx-auto'>
-            <h2 className='form-title text-5xl text-black text-center'>login</h2>
-            <form onSubmit={handlelogin} action="">
-                <div className="form-control">
-                    <label htmlFor="">email</label>
-                    <input type="email" name='email' id='' required onChange={emailonchange} />
-                </div>
-                <div className="form-control">
-                    <label password="">password</label>
-                    <input type="password" name='password' id='' required  onChange={passchange}/>
-                </div>
-                <input className='btn-submit bg-orange-400 hover:bg-orange-600' type="submit" value="login" />
-            </form>
-            <p className='text-red-500 text-3xl'>{error}</p>
-            <p className='text-green-200'>{succes}</p>
-            <p className='text-yellow-900'>{succesemail}</p>
-           {/* {pass&& <p>no password</p>} */}
-        </div>
-        <p className='text-center text-2xl my-5'>New to <b>Rajsthani Delights </b> ? <Link  to='/register'><p className='text-blue-800'>create a new account </p></Link> </p>
-     </div>
+    <div>
+     
+        <div className='grid lg:grid-cols-2 w-full h-full'>
+
+<div className='my-auto  mx-auto'> 
+  <div className='form-container w-full h-full my-auto '>
+   <h2 className='form-title text-5xl text-black font-bold text-center my-5'>login</h2>
+   <form onSubmit={handlelogin} action="">
+       <div className="form-control">
+           <label htmlFor="">email</label>
+           <input type="email" name='email' id='' required onChange={emailonchange} />
+       </div>
+       <div className="form-control">
+           <label password="">password</label>
+           <input type="password" name='password' id='' required  onChange={passchange}/>
+       </div>
+       <input className='btn-submit bg-orange-400 hover:bg-orange-600' type="submit" value="login" />
+   </form>
+   <p className='text-red-500 text-3xl'>{error}</p>
+   <p className='text-green-200'>{succes}</p>
+   <p className='text-yellow-900'>{succesemail}</p>
+  {/* {pass&& <p>no password</p>} */}
+</div>
+<p className='text-center text-2xl my-5'>New to <b>Rajsthani Delights </b> ? <Link  to='/register'><p className='text-blue-800'>create a new account </p></Link> </p>
+</div>
+<Lottie style={{width:400}} className='mx-auto ' animationData={groovyWalkAnimation} loop={true} /> 
+</div>
+    </div>
     );
 };
 
