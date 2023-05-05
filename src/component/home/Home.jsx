@@ -21,11 +21,11 @@ const Home = () => {
           <div className='relative '>
             <div className=' '>
               
-          <img className='w-full h-96  brightness-50 object-cover rounded-xl' src="../../../public/pexels-ella-olsson-1640773 (2).jpg" alt="" />
+          <img className='w-full h-96  brightness-50 object-cover rounded-xl' src="/public/pexels-ella-olsson-1640773 (2).jpg" alt="" />
             </div>
          
 <div className='absolute  top-28 left-6'>
-<h1 className='tracking-wide text-white text-3xl  text-start font-semibold text-center'> Unleash the Flavors of India <br /> Discover the Best Recipes with Just One Click </h1>
+<h1 className='tracking-wide text-white text-3xl font-semibold text-center'> Unleash the Flavors of India <br /> Discover the Best Recipes with Just One Click </h1>
 <div className='flex'><input type="text" placeholder="Type here" className="input w-full mt-5 bg-white max-w-xs" /><button className="btn btn-active btn-ghost mt-5 ms-5"> <FaSistrix/></button></div>
 
 </div>
