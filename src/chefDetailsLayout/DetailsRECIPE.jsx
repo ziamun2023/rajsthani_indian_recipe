@@ -4,11 +4,22 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FcLike } from "react-icons/fc";
+import { BsFillHeartFill } from "react-icons/bs";
+
 
 const DetailsRECIPE = ({item}) => {
+
+  const [love,setLove]=useState(1)
+
     const handleLike=(name)=>{
+      setLove(love === 1 ? 2 : 1);
  toast(name)
- toast("Hope You liked it ")
+if(love===1){
+  toast("Disliked")
+}
+else if(love===2){
+  toast("liked ")
+}
     }
     
     const [data,setData]=useState([])
@@ -34,7 +45,7 @@ const DetailsRECIPE = ({item}) => {
     <h2 className="card-title font-semibold text-2xl text-gray-900">{name}</h2>
     <p className='font-semibold text-gray-800'>About the recipe</p> <span><p className='text-gray-600 mb-5'> {details}</p></span>
    <div className='bg-gray-600 p-5 rounded-md'> <small><p className='font-semibold text-gray-200'>Ingredients</p>{ingredients}</small></div>
-    <div > <b>Hit like button if you love </b>   <FcLike  onClick={()=>handleLike(name)}/>     </div>
+    <div > <b>Hit like button if you love </b> <div><button  onClick={()=>handleLike(name)}> {love===1?<FcLike/>:<BsFillHeartFill/>} </button></div> </div>
 
     
   </div>
